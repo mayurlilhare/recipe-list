@@ -15,8 +15,7 @@ function RecipeDetails({ recipeDetail, setRecipeDetail, displayRecipeDetail, set
                 role="dialog"
             >
                 <div style={{ background: "black", color: 'white', marginBottom: '10px', textAlign: 'center', width: '100%' }}>
-                    <DialogTitle id="todo-dialog-title" style={{ display: 'inline-block', fontSize: '35px' }}>{recipeDetail?.name}</DialogTitle>
-                    <DialogActions style={{ display: 'inline-block', float: 'right' }}>
+                <DialogActions style={{ display: 'inline-block', float: 'right' }}>
                         <Button onClick={() => {
                             setRecipeDetail(null)
                             setDisplayRecipeDetail(false)
@@ -25,6 +24,8 @@ function RecipeDetails({ recipeDetail, setRecipeDetail, displayRecipeDetail, set
                                 background: "white", color: 'black',
                             }}>X</Button>
                     </DialogActions>
+                    <DialogTitle id="todo-dialog-title" style={{ display: 'inline-block', fontSize: '35px' }}>{recipeDetail?.name}</DialogTitle>
+                    
                 </div>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}>
