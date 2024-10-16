@@ -23,3 +23,26 @@
 body::-webkit-scrollbar{
     display: none;
 }
+
+@media screen and (max-width: 1180px) {
+    .dialogImg{
+        height: 70% !important;
+        width: 80% !important;
+        margin: 10px auto !important;
+        display: block !important;
+    }
+    .detalsDiv {
+        display: block !important;
+        margin: -18% 0% 0% 0% !important;
+    }
+    
+}
+
+@media screen and (max-width: 930px) {
+    .ingridientsDiv{
+        display: block !important;
+        margin: auto !important;
+        width: auto !important;
+    }
+    
+}

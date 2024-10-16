@@ -1,5 +1,6 @@
 import { Button, CardMedia, Dialog, DialogActions, DialogTitle, Typography } from "@mui/material";
 import { useState } from "react";
+import classes from '../recipeList.module.css';
 
 function RecipeDetails({ recipeDetail, setRecipeDetail, displayRecipeDetail, setDisplayRecipeDetail }) {
     const [enableFullScreen, setEnableFullScreen] = useState(false)
@@ -13,8 +14,8 @@ function RecipeDetails({ recipeDetail, setRecipeDetail, displayRecipeDetail, set
                 aria-labelledby="todo-dialog-title"
                 role="dialog"
             >
-                <div style={{ background: "black", color: 'white', marginBottom: '10px' }}>
-                    <DialogTitle id="todo-dialog-title" style={{ display: 'inline-block', fontSize: '35px', }}>{recipeDetail?.name}</DialogTitle>
+                <div style={{ background: "black", color: 'white', marginBottom: '10px', textAlign: 'center', width: '100%' }}>
+                    <DialogTitle id="todo-dialog-title" style={{ display: 'inline-block', fontSize: '35px' }}>{recipeDetail?.name}</DialogTitle>
                     <DialogActions style={{ display: 'inline-block', float: 'right' }}>
                         <Button onClick={() => {
                             setRecipeDetail(null)
@@ -27,14 +28,14 @@ function RecipeDetails({ recipeDetail, setRecipeDetail, displayRecipeDetail, set
                 </div>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row' }}>
-                    <div style={{ display: 'inline-block', margin: '10px' }}>
+                    <div style={{ display: 'inline-block', margin: '10px' }} >
                         <CardMedia
                             component="img"
                             image={recipeDetail?.image}
                             alt={recipeDetail?.name}
                             sx={enableFullScreen
                                 ? {
-                                    marginLeft: "90px",
+                                    marginLeft: "auto",
                                     height: "413px",
                                     width: "416px",
                                     borderRadius: "20px",
@@ -50,11 +51,12 @@ function RecipeDetails({ recipeDetail, setRecipeDetail, displayRecipeDetail, set
                                     boxShadow: '5px 5px 3px'
                                 }
                             }
+                            className={classes.dialogImg}
                         />
                     </div>
 
-                    <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', marginLeft: enableFullScreen ? '200px' : '10px' }}>
-                        <div style={{ margin: enableFullScreen ? '10px 50px' : '10px' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', marginLeft: enableFullScreen ? '200px' : '10px' }} className={classes.detalsDiv}>
+                        <div style={{ margin: enableFullScreen ? '10px 50px' : '10px' }} >
                             <ul>
                                 <li><Typography variant="body2" sx={{ color: 'text.primary', fontSize: enableFullScreen ? '1.5rem' : '1rem', }}>
                                     Cuisine : {recipeDetail?.cuisine}
@@ -109,8 +111,8 @@ function RecipeDetails({ recipeDetail, setRecipeDetail, displayRecipeDetail, set
 
                 </div>
                 {enableFullScreen
-                    ? <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '20px', marginBottom: '30px' }}>
-                        <div style={{ marginLeft: '20px', width: '30%', border: '1px solid grey', borderRadius: '10px' }}>
+                    ? <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap', gap: '20px', marginBottom: '30px' }}>
+                        <div style={{ marginLeft: '20px', width: '30%', border: '1px solid grey', borderRadius: '10px' }} className={classes.ingridientsDiv}>
                             <Typography variant="body2" sx={{ color: 'white', paddingLeft: '30px', background: 'grey', fontSize: '2rem', borderRadius: '10px' }}>
                                 Ingredients :
                             </Typography>
@@ -126,7 +128,7 @@ function RecipeDetails({ recipeDetail, setRecipeDetail, displayRecipeDetail, set
 
                                 }</ul>
                         </div>
-                        <div style={{ width: '60%', border: '1px solid grey', borderRadius: '10px' }}>
+                        <div style={{ width: '60%', border: '1px solid grey', borderRadius: '10px' }} className={classes.ingridientsDiv}>
                             <Typography variant="body2" sx={{ color: 'white', paddingLeft: '30px', background: 'grey', fontSize: '2rem', borderRadius: '10px' }}>
                                 Instructions :
                             </Typography>
