@@ -1,0 +1,19 @@
+.recipeList{
+    display:flex;
+    gap: 15px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.recipeImage{
+    height:40%;
+    width:100%;
+}
+
+.recipeHeader{
+    margin-bottom: 20px;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
