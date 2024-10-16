@@ -36,7 +36,7 @@ function RecipeDetails({ recipeDetail, setRecipeDetail, displayRecipeDetail, set
                             alt={recipeDetail?.name}
                             sx={enableFullScreen
                                 ? {
-                                    marginLeft: "auto",
+                                    marginLeft: "30%",
                                     height: "413px",
                                     width: "416px",
                                     borderRadius: "20px",
